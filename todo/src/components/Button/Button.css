@@ -1,0 +1,32 @@
+button{
+    background-color: #1f1e1e;
+    color: #ffffff;
+    text-align: center;
+}
+
+button:hover{
+    background-color: #00000085;
+    border: 1px solid #00000085;
+    color: #1f1e1e;
+    cursor: pointer;
+}
+
+button:active{
+    transform: translateY(1px);
+}
+
+.default{
+    width: 10rem;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    margin: 1px 1px;
+    border-radius: 5px;
+}
+
+.small{
+    width: 5rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 0.7rem;
+    margin: 1rem 1rem;
+    border-radius: 3px;
+}
