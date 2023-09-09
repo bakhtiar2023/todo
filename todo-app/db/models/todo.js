@@ -8,8 +8,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   todo.init({
-    title: DataTypes.STRING,
-    completed: DataTypes.BOOLEAN,
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    completed: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
   }, {
     sequelize,
     modelName: 'todo',

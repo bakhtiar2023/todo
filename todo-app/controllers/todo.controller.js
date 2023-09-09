@@ -74,7 +74,7 @@ class TodoController {
     } else if (result === false) {
       res.status(notFound).send(dataNotFound);
     } else {
-      const data = await TodoModel.delete(id);
+      const data = await TodoModel.drop(id);
       if (data === true) {
         res.status(success).send(deleted);
       } else {

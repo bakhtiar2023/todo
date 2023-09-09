@@ -55,7 +55,7 @@ class TodoModel {
     }
   };
 
-  static delete = async (id) => {
+  static drop = async (id) => {
     try {
       await todo.destroy({ where: { id } });
       return true;
