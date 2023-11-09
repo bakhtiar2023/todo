@@ -25,4 +25,5 @@ module.exports = {
     'linebreak-style': 0,
   },
   plugins: ['import'],
+  ignorePatterns: ['*.test.js', '*.config.js'],
 };

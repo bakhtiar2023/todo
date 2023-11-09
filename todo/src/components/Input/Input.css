@@ -1,0 +1,40 @@
+input[type=search]::-webkit-search-cancel-button{
+    cursor: pointer;
+    margin-right: 0.5em;
+    color: #00000000;
+}
+
+.default{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+    width: auto;
+}
+
+.small{
+    width: 10em;
+    height: 1.5em;
+    margin: 10px 10px;
+}
+
+.medium{
+    width: 15em;
+    height: 1.7em;
+    margin: 10px 10px;
+}
+.large{
+    width: 20em;
+    height: 2em;
+    margin: 10px 10px;
+}
