@@ -53,12 +53,34 @@ th{
     border: 1px solid var(--primary-text-color);
 }
 .btnAdd{
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: var(--brown);
     color: var(--primary-text-color);
     width: 6rem;
     height: 1.7rem;
+    letter-spacing: .02rem;
     border-radius: 1rem;
 }
 .btnAdd:hover{
     background-color: var(--secondary-text-color);
+    text-decoration: none;
+}
+.labelEditModal{
+    text-align: left;
+    width: 20vw;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-aleo);
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.inputTodo{
+    box-shadow: none;
+    border: none;
+    border-radius: .5rem;
+}
+.inputTodo:focus{
+    padding-left: .5rem;
+    border: none;
 }

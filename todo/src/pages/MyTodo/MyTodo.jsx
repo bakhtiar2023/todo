@@ -207,18 +207,21 @@ function MyTodo() {
   return (
     <div className="container flex column align-start justify-center">
       <Modal show={show} handleClose={handleClose}>
-        <div className="flex column justify-center align-center">
-          <input type="text" className="mt-3 mb-3" id="titleInput" />
-          <input type="text" className="mt-3 mb-3" id="completedInput" />
+        <div className="mt-2 mb-2 flex column justify-center align-center">
+          <div className="h2 text-center mt-0 text-quinary">Edit Todo</div>
+          <div className="labelEditModal text-quinary">todo title</div>
+          <input type="text" className="inputTodo w-20 h-3" id="titleInput" />
+          <div className="labelEditModal text-quinary">completed</div>
+          <input type="text" className="inputTodo mt-0 mb-4 w-20 h-3" id="completedInput" />
           <button type="submit" className="btn bg-primary text-primary">Submit</button>
         </div>
       </Modal>
       <Modal show={confirm} handleClose={handleCloseConfirm}>
         <div className="flex column align-center justify-center">
-          <div>are you sure to delete todo?</div>
+          <div className="h3 mt-2 mb-2 text-capitalize text-quinary">are you sure to delete todo?</div>
           <div className="flex align-center justify-center">
             <button type="button" className="btn">Yes</button>
-            <button type="button" className="btn">Discard</button>
+            <button type="button" className="btn" onClick={handleCloseConfirm}>Discard</button>
           </div>
         </div>
       </Modal>
@@ -233,7 +236,7 @@ function MyTodo() {
             <th className="table-cell h4 text-quinary bg-tertiary">Completed</th>
             <th className="table-cell h4 text-quinary bg-tertiary">Date Created</th>
             <th className="table-cell h4 text-quinary bg-tertiary">Date Updated</th>
-            <th className="table-cell h4 text-quinary bg-tertiary"> </th>
+            <th className="table-cell h4 text-quinary bg-tertiary">Options</th>
           </tr>
           {
             data.map((cellData) => (

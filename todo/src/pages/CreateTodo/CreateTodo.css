@@ -1,0 +1,31 @@
+@import url('../../index.css');
+@import url('../MyTodo/MyTodo.css');
+
+.landingPage{
+    background-color: var(--primary-text-color);
+    width: 65%;
+    height: 70%;
+    border-radius: 1rem;
+}
+.leftContainer{
+    width: 53.5%;
+    height: 100%;
+    border-radius: 1rem 0 0 1rem;
+    background-image: url('../../assets/aerial-view-green-forest.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.textLeft{
+    width: 15%;
+    height: 100%;
+    writing-mode:vertical-rl;
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+.rightContainer{
+    width: 46.5%;
+    height: 100%;
+    border-radius: 0 1rem 1rem 0;
+    background-color: var(--secondary-text-color);
+}
