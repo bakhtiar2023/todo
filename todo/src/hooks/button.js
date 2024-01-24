@@ -1,16 +1,9 @@
-class ButtonHooks{
-    static updateTodo = () => {
-        return true
-    }
+class ButtonHooks {
+  static updateTodo = () => true;
 
-    static deleteTodo = () => {
-        return true
-    }
+  static deleteTodo = () => true;
 
-    static submitTodo = () => {
-        return true
-    }
-
+  static submitTodo = () => true;
 }
 
-export default new ButtonHooks()
+export default new ButtonHooks();

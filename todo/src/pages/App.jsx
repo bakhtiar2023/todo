@@ -1,26 +1,23 @@
-import './App.css';
-import React, { useState } from 'react';
-import Popup from '../components/Popup/Popup';
-import Button from '../components/Button/Button';
-// import Input from '../components/Input/Input';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './Homepage/HomePage';
+import NotFound from './NotFound/NotFound';
+import MyTodo from './MyTodo/MyTodo';
+import Contact from './Contact/Contact';
+import MainPage from './MainPage/MainPage';
+import CreateTodo from './CreateTodo/CreateTodo';
 
 function App() {
-  const [show, setShow] = useState(false);
-  const showPopup = () => {
-    setShow(true);
-  };
   return (
-    <>
-      <Button handleClick={showPopup} styles="small">Show</Button>
-      <div style={{
-        display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '10rem',
-      }}
-      >
-        <Popup styles="success" popupShow={true || show}>This is Success Popup Message</Popup>
-        <Popup styles="danger" popupShow={true || show}>This is Danger Popup Message</Popup>
-        <Popup styles="warning" popupShow={show || true}>This is Warning Popup Message</Popup>
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<MainPage />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/my-todo" element={<MyTodo />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/create-todo" element={<CreateTodo />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 

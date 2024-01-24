@@ -7,11 +7,4 @@ const popupTypes = (styles) => {
   return 'default warning';
 };
 
-const popupShowConverter = (popupShow) => {
-  if (popupShow === 1) {
-    return true;
-  }
-  return false;
-};
-
-export { popupTypes, popupShowConverter };
+export default popupTypes;
