@@ -6,6 +6,7 @@ import MyTodo from './MyTodo/MyTodo';
 import Contact from './Contact/Contact';
 import MainPage from './MainPage/MainPage';
 import CreateTodo from './CreateTodo/CreateTodo';
+import EditTodo from './EditTodo/EditTodo';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/my-todo" element={<MyTodo />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/create-todo" element={<CreateTodo />} />
+        <Route path="/edit-todo" element={<EditTodo />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
