@@ -4,18 +4,13 @@ import { Link } from 'react-router-dom';
 import './MyTodo.css';
 import Modal from '../../components/Modal/Modal';
 import getAllTodo from '../../api/getAllTodo';
+import deleteTodo from '../../api/deleteTodo';
 
 function MyTodo() {
-  const [show, setShow] = useState(false);
   const [todos, setTodos] = useState([]);
+  const [todoId, setTodoId] = useState(0);
   const [loading, setLoading] = useState(true);
-  const handleClose = () => {
-    setShow(false);
-  };
   const [confirm, setConfirm] = useState(false);
-  const handleConfirm = () => {
-    setConfirm(true);
-  };
   const handleCloseConfirm = () => {
     setConfirm(false);
   };
@@ -30,23 +25,20 @@ function MyTodo() {
     getTodo();
   }, [loading]);
 
+  const handleDelTodo = async () => {
+    await deleteTodo(todoId);
+    setLoading(true);
+    setConfirm(false);
+    setTodoId(0);
+  };
+
   return (
     <div className="container flex column align-start justify-center">
-      <Modal show={show} handleClose={handleClose}>
-        <div className="mt-2 mb-2 flex column justify-center align-center">
-          <div className="h2 text-center mt-0 text-quinary">Edit Todo</div>
-          <div className="labelEditModal text-quinary">todo title</div>
-          <input type="text" className="inputTodo w-20 h-3" id="titleInput" />
-          <div className="labelEditModal text-quinary">completed</div>
-          <input type="text" className="inputTodo mt-0 mb-4 w-20 h-3" id="completedInput" />
-          <button type="submit" className="btn bg-primary text-primary">Submit</button>
-        </div>
-      </Modal>
       <Modal show={confirm} handleClose={handleCloseConfirm}>
         <div className="flex column align-center justify-center">
           <div className="h3 mt-2 mb-2 text-capitalize text-quinary">are you sure to delete todo?</div>
           <div className="flex align-center justify-center">
-            <button type="button" className="btn">Yes</button>
+            <button type="button" className="btn" onClick={handleDelTodo}>Yes</button>
             <button type="button" className="btn" onClick={handleCloseConfirm}>Discard</button>
           </div>
         </div>
@@ -67,15 +59,22 @@ function MyTodo() {
             </tr>
           </thead>
           <tbody>
-            { loading ? (<tr className="table-row"><td className="table-cell h1 text-quinary bg-tertiary text-center text-capitalize" colSpan={5}>loading...</td></tr>) : todos.map((cellData) => (
+            { loading ? (
+              <tr className="table-row">
+                <td className="table-cell h1 text-quinary bg-tertiary text-center text-capitalize" colSpan={5}>
+                  <i className="fa fa-circle-o-notch fa-spin" />
+                  loading...
+                </td>
+              </tr>
+            ) : todos.map((cellData) => (
               <tr className="table-row" key={cellData.id}>
                 <td className="table-cell h5 text-quinary bg-tertiary text-center text-capitalize">{cellData.title}</td>
-                <td className="table-cell h5 text-quinary bg-tertiary text-center">{cellData.completed ? '✔' : '-'}</td>
+                <td className="table-cell h5 text-quinary bg-tertiary text-center">{cellData.completed ? '✔' : '᠆'}</td>
                 <td className="table-cell h5 text-quinary bg-tertiary text-center">{moment(cellData.createdAt).format('DD-MM-YYYY,h:mm A').split(',')[0]}</td>
                 <td className="table-cell h5 text-quinary bg-tertiary text-center">{moment(cellData.updatedAt).format('DD-MM-YYYY,h:mm A').split(',')[0]}</td>
                 <td className="table-cell h5 text-quinary bg-tertiary text-center">
                   <Link to="/edit-todo" className="table-button" state={cellData}>edit</Link>
-                  <button type="button" className="table-button ms-3" onClick={handleConfirm}>delete</button>
+                  <button type="button" className="table-button ms-3" onClick={() => { setConfirm(true); setTodoId(cellData.id); }}>delete</button>
                 </td>
               </tr>
             ))}

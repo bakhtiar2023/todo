@@ -1,7 +1,7 @@
 :root{
   --primary-color: #0c484b;
   --secondary-color: #37666b;
-  --primary-text-color: #f7f5f2;
+  --primary-text-color: #f7f5f2e4;
   --secondary-text-color: #577a7d;
   --brown: #e1a66f;
   --black: #000000;
@@ -284,6 +284,9 @@
 }
 a{
   text-decoration: none;
+}
+.text-underline{
+  border-bottom: 1px solid var(--brown);
 }
 ::-webkit-scrollbar{
   width: 5px;

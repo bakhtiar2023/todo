@@ -1,6 +1,6 @@
 import React from 'react';
 import './CreateTodo.css';
-import Form from '../../components/Form/Form';
+import { FormPost } from '../../components/Form/Form';
 
 function CreateTodo() {
   return (
@@ -10,7 +10,7 @@ function CreateTodo() {
           <div className="textLeft h1 text-primary opacity-3 ms-0 mt-0 mb-0 me-0">Todo Apps</div>
         </div>
         <div className="rightContainer flex column align-center justify-start">
-          <Form formTitle="create todo" labelInputCompleted="completed" labelInputTitle="todo title" />
+          <FormPost formTitle="create todo" labelInputTitle="todo title" />
         </div>
       </div>
     </div>
