@@ -1,0 +1,55 @@
+@import url('../../index.css');
+.container{
+    width: 100vw;
+    margin: 0 0;
+    height: 100vh;
+    background-color: var(--primary-color);
+}
+.section{
+    width: 75%;
+    height: 70vh;
+    background-color: var(--secondary-color);
+    border-radius: 2rem;
+    box-shadow: 0 0.8rem 0.8rem 0 rgba(0, 0, 0, 0.18),
+    0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.15), 0 0.8rem 0.8rem 0 rgba(0, 0, 0, 0.15);
+}
+.flex{
+    display: flex;
+}
+.align-center{
+    align-items: center;
+}
+.align-flex-end{
+    align-items: flex-end;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-end{
+    justify-content: flex-end;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.right-card{
+    width: 29.5%;
+    height: 98.5%;
+    background-image: url('../../assets/aerial-view-green-forest.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.left-card{
+    width: 69.5%;
+    height: 98.5%;
+}
+.primary{
+    border-radius: 0 1.9rem 1.9rem 0;
+    background-color: var(--primary-color);
+}
+.secondary{
+    border-radius: 1.9rem 0 0 1.9rem;
+}

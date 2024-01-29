@@ -1,0 +1,35 @@
+@import url('../../index.css');
+.selectionInput{
+    width: 100%;
+    height: 10%;
+    background-color: var(--primary-color);
+    padding: .5rem .5rem;
+    border-radius: .5rem;
+    color: var(--brown);
+}
+option:checked, option:hover{
+    background-color: var(--secondary-color)!important;
+    cursor: pointer;
+}
+.labelEdit{
+    text-align: left;
+    width: 20vw;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-aleo);
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.inputTodo{
+    box-shadow: none;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--brown);
+    border-radius: .5rem;
+    padding-left: .5rem;
+}
+.inputTodo:focus{
+    padding-left: .5rem;
+    border-color: var(--secondary-color);
+}

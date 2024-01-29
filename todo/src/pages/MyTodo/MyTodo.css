@@ -1,0 +1,63 @@
+@import url('../../index.css');
+@import url('../NotFound/NotFound.css');
+
+.container-tables{
+    width: 100%;
+    height: 70%;
+    overflow-y: scroll;
+}
+.container-title{
+    margin-left: 4.1rem;
+    width: 80%;
+    height: 10%;
+}
+.todo-table{
+    width: 90%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-radius: 0.5rem;
+    display: table;
+    white-space: nowrap;
+}
+.todo-table,th,td{
+    margin: 0 0;
+    padding: 0 0;
+    border: 1px solid var(--secondary-color);
+}
+th{
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    overflow: auto;
+}
+.table-row{
+    height: 2rem;
+}
+.table-button{
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    border: 2px solid var(--secondary-color);
+    padding: 0.2rem .6rem;
+    border-radius: 1rem;
+    font-size: .8rem;
+    color: var(--brown);
+    font-weight: 600;
+    font-family: var(--font-aleo);
+    text-decoration: none;
+}
+.table-button:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
+    cursor: pointer;
+}
+.btnAdd{
+    border-bottom: 1px solid var(--brown);
+    color: var(--primary-text-color);
+    width: 6rem;
+    height: 1.7rem;
+    letter-spacing: .02rem;
+}
+.btnAdd:hover{
+    border-bottom: 2px solid var(--brown);
+}

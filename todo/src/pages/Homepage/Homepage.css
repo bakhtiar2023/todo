@@ -1,0 +1,130 @@
+@import url('../../index.css');
+.container{
+    width: 100vw;
+    margin: 0 0;
+    height: 100vh;
+    font-family: var(--font-roboto);
+}
+.top-0{
+    top: 0;
+}
+.mainContainer{
+    width: 100%;
+    height: 100%;
+    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+}
+.navMenu{
+    width: 40%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.navLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    margin-left: 8rem;
+    cursor: pointer;
+}
+.navLogo:hover{
+    border-bottom: none!important;
+}
+#toText{
+    color: var(--primary-text-color);
+}
+#doText{
+    color: var(--secondary-text-color);
+    margin-left: 0.2rem;
+}
+.link{
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    z-index: 1;
+    font-weight: bolder;
+}
+.link:hover{
+    border-bottom: 2px solid var(--brown);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.absolute{
+    position: absolute;
+    background-position: center;
+}
+.textContainer{
+    height: 50vh;
+    width: 65%;
+}
+.textContain{
+    margin-top: .2rem;
+    font-family: var(--font-roboto);
+    width: 80%;
+    height: 100%;
+    z-index: 1;
+}
+.imageContain{
+    margin-top: .2rem;
+    z-index: 1;
+    width: 20%;
+    height: 100%;
+    background-image: url('../../assets/aerial-view-green-forest.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.rightBg{
+    background-image: url('../../assets/aerial-view-green-forest.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 15%;
+    position: relative;
+    height: 100%;
+    left: -10rem;
+    position: relative;
+}
+.leftBg{
+    background-image: url('../../assets/aerial-view-green-forest.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12.5%;
+    height: 50%;
+    margin-top: 10rem;
+    left: -4.5rem;
+    position: relative;
+}
+.firstLine{
+    font-size: 1.2rem;
+}
+.secondLine{
+    font-size: 0.8rem;
+}
+.btn{
+    width: 10em;
+    height: 3em;
+    border: 2px solid var(--secondary-text-color);
+    color: var(--brown);
+    background-color: var(--primary-color);
+    border-radius: 1.8rem;
+    font-family: var(--font-aleo);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+}
+.btn:hover{
+    color: var(--primary-text-color);
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-text-color);
+    z-index: 1;
+}

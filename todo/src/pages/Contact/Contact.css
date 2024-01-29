@@ -1,0 +1,15 @@
+@import url('../../index.css');
+
+.center-section{
+    width: 100%;
+    height: 40%;
+    background-image: url('../../assets/aerial-view-green-forest.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.social-link:hover{
+    border-bottom: none;
+    transform: scale(1.05);
+}

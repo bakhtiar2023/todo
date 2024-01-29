@@ -9,6 +9,9 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "linebreak-style": 0
-    }
+        "linebreak-style": 0,
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "no-restricted-globals": ["error", "event", "fdescribe"]
+    },
+    "ignorePatterns": ["__test__/*","__mocks__/*","db/*"]
 }

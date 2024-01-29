@@ -1,17 +1,25 @@
-import './App.css';
 import React from 'react';
-import Button from '../components/Button/Button';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './Homepage/HomePage';
+import NotFound from './NotFound/NotFound';
+import MyTodo from './MyTodo/MyTodo';
+import Contact from './Contact/Contact';
+import MainPage from './MainPage/MainPage';
+import CreateTodo from './CreateTodo/CreateTodo';
+import EditTodo from './EditTodo/EditTodo';
 
 function App() {
   return (
-    <div style={{
-      display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center',
-    }}
-    >
-      <Button styles="small">Small</Button>
-      <Button styles="medium">Medium</Button>
-      <Button>Default</Button>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/my-todo" element={<MyTodo />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/create-todo" element={<CreateTodo />} />
+        <Route path="/edit-todo" element={<EditTodo />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 

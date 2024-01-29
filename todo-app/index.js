@@ -1,10 +1,11 @@
 const express = require('express');
+const cors = require('cors');
+const todoRouter = require('./routes/todo.route');
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use('/', todoRouter);
 
 module.exports = app;
