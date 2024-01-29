@@ -6,6 +6,7 @@
   --brown: #e1a66f;
   --black: #000000;
   --deep-ocean: #216974;
+  --red: #880404cc;
 
   --font-aleo: 'Aleo';
   --font-roboto: 'Roboto';
@@ -254,6 +255,9 @@
 }
 .text-quinary{
   color: var(--primary-color);
+}
+.text-danger{
+  color: var(--red);
 }
 .bg-primary{
   background-color: var(--primary-color);

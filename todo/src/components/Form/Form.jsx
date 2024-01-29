@@ -47,7 +47,7 @@ function FormEdit({
       <form className="mt-2 mb-2 flex column justify-center align-center" onSubmit={handleSubmit}>
         <label className="labelEdit text-quinary" htmlFor="titleInput">
           {labelInputTitle}
-          <input type="text" className="inputTodo w-20 h-3" id="titleInput" defaultValue={todoValues?.title} onChange={handleChange} name="title" />
+          <input type="text" className="inputTodo w-20 h-3" id="titleInput" value={todoValues?.title} onChange={handleChange} name="title" />
         </label>
         <label htmlFor="inputCompletedOption" className="labelEdit flex justify-center align-center text-quinary">
           Completed:
@@ -76,7 +76,7 @@ function FormPost({
   const [todos, setTodos] = useState({ title: '', completed: false });
   const navigate = useNavigate();
   const {
-    handleChange, handleSubmit,
+    handleChange, handleSubmit, errors, touched,
   } = useFormik({
     initialValues: todos,
     enableReinitialize: true,
@@ -86,10 +86,10 @@ function FormPost({
       const resPosted = await postTodo(values);
       if (resPosted === true) {
         setLoading(false);
-        console.log('Todo successfully posted');
+        alert('Todo successfully posted');
         navigate('/my-todo');
       } else {
-        console.log('Server Error');
+        alert('Server Error');
       }
     },
   });
@@ -98,18 +98,26 @@ function FormPost({
     <div>
       <div className="h2 text-quinary text-center text-capitalize">{formTitle}</div>
       <form className="mt-2 mb-2 flex column justify-center align-center" onSubmit={handleSubmit}>
-        <label className="labelEdit text-quinary" htmlFor="titleInput">
-          {labelInputTitle}
-          <input type="text" className="inputTodo w-20 h-3" id="titleInput" defaultValue={todos.title} onChange={handleChange} name="title" />
+        <label className={errors.title ? 'labelEdit text-danger mb-2' : 'labelEdit text-quinary'} htmlFor="titleInput">
+          {
+            errors.title
+              ? errors.title
+              : labelInputTitle
+          }
+          <input type="text" className="inputTodo w-20 h-3" id="titleInput" style={errors.title || touched.title ? { border: '1px solid #ff0000' } : {}} defaultValue={todos.title} onChange={handleChange} name="title" />
         </label>
         <label htmlFor="inputCompletedOption" className="labelEdit flex justify-center align-center text-quinary">
-          Completed:
-          <select className="selectionInput ms-3" id="inputCompletedOption" defaultValue={todos.completed} onChange={handleChange} name="completed">
+          {
+            errors.completed
+              ? errors.completed
+              : 'Completed:'
+          }
+          <select className="selectionInput ms-3" id="inputCompletedOption" style={errors.completed || touched.completed ? { border: '1px solid #ff0000' } : {}} defaultValue={todos.completed} onChange={handleChange} name="completed">
             <option value={false}>ongoing</option>
             <option value={!false}>completed</option>
           </select>
         </label>
-        <button type="submit" className="btn bg-primary text-brown" onClick={() => { setLoading(!loading); }} style={loading === true ? { pointerEvents: 'none' } : {}}>{loading ? (<i className="fa fa-circle-o-notch fa-spin" />) : 'Submit'}</button>
+        <button type="submit" className="btn bg-primary text-brown" onClick={() => { setLoading(!loading); }} style={loading === true || errors.title ? { pointerEvents: 'none' } : {}}>{loading ? (<i className="fa fa-circle-o-notch fa-spin" />) : 'Submit'}</button>
         <Link to="/my-todo" className="link h5 text-quinary text-center ms-4 mt-4 text-underline">Back to My Todo</Link>
       </form>
     </div>

@@ -26,7 +26,7 @@ function Popup({
   return (
     <div className={show === true ? popupClass : 'default hide'} id={popupId}>
       <p className="message">{children}</p>
-      <Link href="/" className="closeButton" onClick={handlePopupShow}>x</Link>
+      <Link href="*" className="closeButton" onClick={handlePopupShow}>x</Link>
     </div>
   );
 }
