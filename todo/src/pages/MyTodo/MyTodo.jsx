@@ -3,8 +3,8 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 import './MyTodo.css';
 import Modal from '../../components/Modal/Modal';
-import getAllTodo from '../../apiCaller/getAllTodo';
-import deleteTodo from '../../apiCaller/deleteTodo';
+import getAllTodo from '../../api/getAllTodo';
+import deleteTodo from '../../api/deleteTodo';
 
 function MyTodo() {
   const [todos, setTodos] = useState([]);
