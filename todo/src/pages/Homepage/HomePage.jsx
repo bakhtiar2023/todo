@@ -15,7 +15,7 @@ function HomePage() {
             <p className="mb-0 text-tertiary">Hi, my name is</p>
             <p className="mt-3 mb-0 h1 text-primary">Achmad Bakhtiar K N.</p>
             <p className="mt-0 mb-0 h1 text-secondary">I build things for the web.</p>
-            <p className="mt-4 mb-0 h5 text-secondary">{'I\'m a newbie full-stack web developer (and occasionally testing)'}</p>
+            <p className="mt-4 mb-0 h5 text-secondary">{'I\'m junior full-stack web developer (and occasionally testing)'}</p>
             <p className="mt-0 mb-0 h5 text-secondary">{'exceptional digital expreiences.Currently, I\'m focused on grow up my skill,'}</p>
             <p className="mt-0 h5 text-secondary">
               seeking for new job and my current job is Quality Inspector at
