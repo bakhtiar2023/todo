@@ -117,7 +117,7 @@ function FormPost({
             <option value={!false}>completed</option>
           </select>
         </label>
-        <button type="submit" className="btn bg-primary text-brown" onClick={() => { setLoading(!loading); }} style={loading === true || errors.title ? { pointerEvents: 'none' } : {}}>{loading ? (<i className="fa fa-circle-o-notch fa-spin" />) : 'Submit'}</button>
+        <button type="submit" className="btn bg-primary text-brown" onClick={() => { if (errors.title) { setLoading(!loading); } else { setLoading(loading); } }} style={loading === true || errors.title ? { pointerEvents: 'none' } : {}}>{loading ? (<i className="fa fa-circle-o-notch fa-spin" />) : 'Submit'}</button>
         <Link to="/my-todo" className="link h5 text-quinary text-center ms-4 mt-4 text-underline">Back to My Todo</Link>
       </form>
     </div>
