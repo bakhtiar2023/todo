@@ -6,15 +6,15 @@ const Sequelize = require('sequelize');
 const process = require('process');
 const pg = require('pg');
 const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'production';
 const config = require(__dirname + '/../config/database.js')[env];
 const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], { ...config, dialectModule: pg }, { dialecOptions: { ssl: true } });
+  sequelize = new Sequelize(process.env[config.use_env_variable], { ...config, dialectModule: pg }, { dialectOptions: { ssl: true } });
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, { ...config, dialectModule: pg }, { dialecOptions: { ssl: true } });
+  sequelize = new Sequelize(config.database, config.username, config.password, { ...config, dialectModule: pg }, { dialectOptions: { ssl: true } });
 }
 
 fs
