@@ -12,12 +12,6 @@ https://github.com/bakhtiar2023/todo.git
 
 ## Deployment URL
 
-### Frontend
-```
-https://todo-2w8o.vercel.app/
-```
+[Frontend](https://todo-2w8o.vercel.app/)
 
-### Backend
-```
-https://todo-two-silk.vercel.app/todo
-```
+[Backend](https://todo-two-silk.vercel.app/todo)
