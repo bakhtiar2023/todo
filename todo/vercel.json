@@ -1,8 +1,4 @@
 {
-    "rewrites": [{ "source": "(.*)", "destination": "/public/index.html" }],
-    "public": false,
-    "functions": {
-      "api/*.sh": { "runtime": "vercel-dev-runtime@0.0.4" }
-    }
-  }
+    "rewrites": [{ "source": "(.*)", "destination": "/public/index.html" }]
+}
   
