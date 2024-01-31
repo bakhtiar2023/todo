@@ -4,7 +4,7 @@ const postTodo = async (values) => {
   try {
     await axios({
       method: 'post',
-      url: 'http://localhost:3003/todo',
+      url: 'https://todo-two-silk.vercel.app/todo',
       data: values,
     });
     return true;

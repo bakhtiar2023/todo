@@ -4,7 +4,7 @@ const editTodo = async (values) => {
   try {
     await axios({
       method: 'put',
-      url: `http://localhost:3003/todo/${values.id}`,
+      url: `https://todo-two-silk.vercel.app/todo/${values.id}`,
       data: values,
     });
     return true;

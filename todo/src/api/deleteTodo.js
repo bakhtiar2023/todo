@@ -4,7 +4,7 @@ const deleteTodo = async (todoId) => {
   try {
     axios({
       method: 'delete',
-      url: `http://localhost:3003/todo/${todoId}`,
+      url: `https://todo-two-silk.vercel.app/todo/${todoId}`,
     });
     return true;
   } catch (error) {
