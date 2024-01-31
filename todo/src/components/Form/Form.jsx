@@ -6,8 +6,8 @@ import './Form.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import todoSchema from '../../schema';
-import editTodo from '../../api/editTodo';
-import postTodo from '../../api/postTodo';
+import editTodo from '../../apiCaller/editTodo';
+import postTodo from '../../apiCaller/postTodo';
 
 function FormEdit({
   formTitle, labelInputTitle, todoValues,
